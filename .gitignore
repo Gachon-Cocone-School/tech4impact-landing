@@ -1,0 +1,39 @@
+# Node modules
+node_modules/
+
+# Build output
+/dist/
+/build/
+
+# VS Code settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Env files
+.env
+.env.*
+
+# Misc
+*.swp
+*.swo
+
+# Dependency lock files (optional)
+yarn.lock
+pnpm-lock.yaml
+
+# Coverage
+coverage/
+
+# IDE files
+.idea/
+*.iml
+
+# Others
+npm-debug.log*
+prd.md

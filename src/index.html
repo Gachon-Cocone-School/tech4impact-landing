@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech for Impact @ Gachon University</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Analytics (GA4) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX"); // 실제 측정ID로 교체
+    </script>
+    <style>
+      body {
+        font-family: "Inter", "Pretendard", "Noto Sans KR", Arial, sans-serif;
+        background: #FEE500;
+        color: #222;
+        margin: 0;
+      }
+      .container {
+        max-width: 900px;
+        color: #191654;
+        padding: 44px 18px 44px 18px;
+      }
+      .hero {
+        background: #fff;
+        border-radius: 32px;
+        box-shadow: 0 8px 32px rgba(67, 198, 172, 0.1);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        margin: 48px auto;
+        max-width: 900px;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        left: -120px;
+        top: -120px;
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(circle, #43c6ac55 0%, transparent 80%);
+        z-index: 0;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 18px;
+        color: #191654;
+        letter-spacing: -1px;
+        z-index: 1;
+        position: relative;
+      }
+      .hero p {
+        font-size: 1.25rem;
+        color: #444;
+        margin-bottom: 28px;
+        z-index: 1;
+        position: relative;
+      }
+      .video-row {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        margin-bottom: 32px;
+        z-index: 1;
+        position: relative;
+      }
+      .video-row iframe {
+        color: #ff6f61;
+        box-shadow: 0 2px 16px rgba(67, 198, 172, 0.12);
+        border: 2px solid #f8ffae;
+      }
+      .cta-btn {
+        background: linear-gradient(90deg, #43c6ac 0%, #191654 100%);
+        color: #fff;
+        color: #191654;
+        border: none;
+        border-radius: 32px;
+        padding: 18px 48px;
+        font-size: 1.25rem;
+        cursor: pointer;
+        box-shadow: 0 2px 16px rgba(67, 198, 172, 0.16);
+        margin-top: 24px;
+        transition: background 0.2s, transform 0.2s;
+        z-index: 1;
+        position: relative;
+      }
+      .cta-btn:hover {
+        background: linear-gradient(90deg, #191654 0%, #43c6ac 100%);
+        transform: scale(1.04);
+      }
+      .hero .limit {
+        margin-top: 18px;
+        color: #43c6ac;
+        font-weight: 700;
+        font-size: 1.08rem;
+        z-index: 1;
+        position: relative;
+      }
+      .section {
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 2px 16px rgba(67, 198, 172, 0.08);
+        padding: 44px 32px;
+        margin: 48px 0;
+        position: relative;
+        text-align: left;
+      }
+      .section.centered {
+        background: transparent;
+        box-shadow: none;
+        margin-top: -24px;
+        text-align: center;
+      }
+      .section h2 {
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 26px;
+        color: #191654;
+        letter-spacing: -0.5px;
+      }
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+        justify-content: center;
+      }
+      .card {
+        background: linear-gradient(120deg, #f8ffae 0%, #43c6ac 100%);
+        border-radius: 18px;
+        box-shadow: 0 2px 12px rgba(67, 198, 172, 0.1);
+        padding: 32px 22px;
+        min-width: 210px;
+        flex: 1 1 210px;
+        text-align: center;
+        font-size: 1.12rem;
+        font-weight: 700;
+        color: #222;
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .card:hover {
+        box-shadow: 0 4px 24px #43c6ac33;
+        transform: translateY(-4px) scale(1.03);
+      }
+      .faq {
+        margin-top: 28px;
+      }
+      .faq-item {
+        margin-bottom: 22px;
+        background: #f8ffae44;
+        border-radius: 14px;
+        padding: 18px 20px;
+        box-shadow: 0 1px 8px rgba(67, 198, 172, 0.04);
+        display: flex;
+        align-items: center;
+        font-size: 1.08rem;
+        font-weight: 600;
+      }
+      .faq-q {
+        font-weight: 700;
+        color: #43c6ac;
+        margin-right: 12px;
+      }
+      .faq-a {
+        color: #222;
+      }
+      a {
+        color: #191654;
+        text-decoration: underline;
+        font-weight: 700;
+        transition: color 0.2s;
+      }
+      a:hover {
+        color: #ff6f61;
+      }
+      .faq-link {
+        color: #191654;
+        font-weight: 700;
+        text-decoration: underline;
+        margin-top: 20px;
+        display: inline-block;
+        font-size: 1.08rem;
+        transition: color 0.2s;
+      }
+      .faq-link:hover {
+        color: #ff6f61;
+      }
+      ul {
+        padding-left: 18px;
+      }
+      ul li {
+        margin-bottom: 10px;
+        font-size: 1.08rem;
+      }
+      footer {
+        text-align: center;
+        margin: 72px 0 36px 0;
+        color: #888;
+        font-size: 1.05rem;
+        letter-spacing: -0.5px;
+      }
+      @media (max-width: 700px) {
+        .section {
+          padding: 16px;
+        }
+        .cards {
+          flex-direction: column;
+          gap: 16px;
+        }
+        .video-row {
+          flex-direction: column;
+          gap: 14px;
+        }
+        .hero h1 {
+          font-size: 2rem;
+        }
+        .hero {
+          padding: 36px 0 24px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="container">
+        <h1>테크포임팩트 수업이 가천대학교에 개설된다고?</h1>
+        <p>
+          2025년 2학기에 가천대, 서울대, 카이스트에 함께 개설되고 같이
+          진행됩니다
+        </p>
+
+        <div class="video-row">
+          <iframe
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/RTVi_pHaPeI?autoplay=1&mute=1"
+            title="홍보영상"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            style="max-width: 100%; margin: 0 auto; display: block"
+          ></iframe>
+        </div>
+        <h2>
+          요새 진로 고민 많이 되지? 카카오의 현직 크루와 함께 창업,취업 스펙을
+          직접 만들어봐!
+        </h2>
+        <p>
+          혜자스러운 활동비와 장학금, 카카오 현직 크루와 브라이언 임팩트 재단
+          사회혁신가의 멘토링으로 실전 프로젝트를 경험한다
+        </p>
+
+        <h1>40명만 듣는 수업! 놓치면 진짜 후회합니다</h1>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 12px;">
+          <h1 style="font-size: 2rem; margin: 0; color: #191654; font-weight: 800;">학수번호 : <span id="course-num">15738001</span></h1>
+          <button id="copy-course-num" style="padding: 8px 18px; font-size: 1rem; border-radius: 8px; border: 2px solid #ff6f61; background: #ff6f61; color: #fff; font-weight: 800; cursor: pointer; box-shadow: 0 2px 8px #ff6f6133; transition: background 0.2s, color 0.2s;">복사</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="container">
+        <h2 style="font-size: 1.8rem; color: #43c6ac; margin-bottom: 18px">
+          2025년 1학기 연세대 수강생의 후기 영상
+        </h2>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+          "
+        >
+          <iframe
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/MJf92iQdkGU?autoplay=1&mute=1"
+            title="후기영상"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            style="max-width: 100%"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="container">
+        <h2>강의 계획서</h2>
+          <li style="margin-bottom: 12px">
+            <a
+              href="https://docs.google.com/document/d/1C2xGKiURjZ0B1So0FDGiyO_40hyKKRV-kQvgEaz7OKw/edit?usp=sharing"
+              target="_blank"
+              style="
+                color: #43c6ac;
+                font-weight: 700;
+                font-size: 1.08rem;
+                text-decoration: underline;
+              "
+              >2025년 2학기 가천대학교 테크포임팩트 강의 계획서</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>    
+
+    <div class="hero">
+      <div class="container">
+        <h2>테크포임팩트 캠퍼스 공식 자료</h2>
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <li style="margin-bottom: 12px">
+            <a
+              href="https://techforimpact.io/campus/info"
+              target="_blank"
+              style="
+                color: #43c6ac;
+                font-weight: 700;
+                font-size: 1.08rem;
+                text-decoration: underline;
+              "
+              >테크포임팩트 캠퍼스 홈페이지</a
+            >
+          </li>
+          <li style="margin-bottom: 12px">
+            <a
+              href="https://techforimpact.io/campus/project"
+              target="_blank"
+              style="
+                color: #43c6ac;
+                font-weight: 700;
+                font-size: 1.08rem;
+                text-decoration: underline;
+              "
+              >지난 학기 테크포임팩트 캠퍼스 프로젝트 둘러보기</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="container">
+        <h2>테크포임팩트 캠퍼스 수강생 후기</h2>
+          <li style="margin-bottom: 12px">
+            <a
+              href="https://brunch.co.kr/@msmmx/54"
+              target="_blank"
+              style="
+                color: #43c6ac;
+                font-weight: 700;
+                font-size: 1.08rem;
+                text-decoration: underline;
+              "
+              >테크포임팩트 캠퍼스 수업을 마치며</a
+            >
+          </li>
+          <li style="margin-bottom: 12px">
+            <a
+              href="http://bit.ly/46pTLhH"
+              target="_blank"
+              style="
+                color: #43c6ac;
+                font-weight: 700;
+                font-size: 1.08rem;
+                text-decoration: underline;
+              "
+              >후기 및 팀원 인터뷰</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="container">
+        <h2>문의 하기</h2>
+        <a
+          class="faq-link"
+          href="mailto:namjookim@gachon.ac.kr"
+          >namjookim@gachon.ac.kr 로 메일 주세요</a
+        >
+      </div>
+    </div>
+
+    <footer <footer>
+      <div>© 2025 Tech for Impact @ Gachon University</div>
+      <div><a href="https://gcs.gachon.ac.kr/" target="_blank" style="color: #191654; font-weight: 800; text-decoration: underline;">가천코코네스쿨</a></div>
+    </footer>
+
+    <script src="./main.js"></script>
+    <script>
+      document.getElementById('copy-course-num').onclick = function() {
+        const num = document.getElementById('course-num').textContent;
+        navigator.clipboard.writeText(num).then(function() {
+          const btn = document.getElementById('copy-course-num');
+          btn.textContent = '복사됨!';
+          setTimeout(function() { btn.textContent = '복사'; }, 1200);
+        });
+      };
+    </script>
+  </body>
+</html>
